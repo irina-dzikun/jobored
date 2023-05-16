@@ -1,0 +1,48 @@
+.container {
+  width: 100%;
+  padding: 24px 162px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  background-color: white;
+  gap: 25%;
+  box-sizing: border-box;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.title_text {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.pages {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+}
+
+.pages_text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.pages_text:hover {
+  color: rgba(94, 150, 252, 1);
+}
+
+.pages_text:global.active {
+  color: rgba(94, 150, 252, 1);
+}

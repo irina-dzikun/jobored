@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 40px;
+  gap: 8px;
+}
+
+.button {
+  width: 32px;
+  height: 32px;
+  background: #ffffff;
+  border: 1px solid #d5d6dc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:active {
+  background: #5e96fc;
+  color: #ffffff;
+}
+
+.button:global(.active) {
+  background: #5e96fc;
+  color: #ffffff;
+}
