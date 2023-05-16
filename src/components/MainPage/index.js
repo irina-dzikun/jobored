@@ -5,10 +5,10 @@ import styles from "./style.module.css";
 import Header from "../Header";
 import Filters from "../ Filters";
 import InputSearch from "../InputSearch";
-import VacanyBriefly from "../VacancyBriefly";
+import VacanyBrief from "../VacancyBrief";
 import PagesButton from "../PagesButton";
 
-class App extends Component {
+class MainPage extends Component {
   render() {
     return (
       <div>
@@ -17,11 +17,11 @@ class App extends Component {
           <Filters />
           <div className={styles.search_vacancies}>
             <InputSearch />
-            <VacanyBriefly />
-            <VacanyBriefly />
-            <VacanyBriefly />
-            <VacanyBriefly />
-            <PagesButton/>
+            <VacanyBrief />
+            <VacanyBrief />
+            <VacanyBrief />
+            <VacanyBrief />
+            <PagesButton />
           </div>
         </div>
       </div>
@@ -29,4 +29,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default MainPage;

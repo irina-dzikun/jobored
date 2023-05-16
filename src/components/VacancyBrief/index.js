@@ -5,7 +5,7 @@ import styles from "./style.module.css";
 import iconLocation from "../../images/location-icon.svg";
 import iconSave from "../../images/save-icon.svg";
 
-function VacanyBriefly() {
+function VacanyBrief() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -29,4 +29,4 @@ function VacanyBriefly() {
   );
 }
 
-export default VacanyBriefly;
+export default VacanyBrief;
