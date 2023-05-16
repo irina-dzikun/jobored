@@ -11,7 +11,7 @@ class VacancyPage extends Component {
       <div>
         <Header />
         <div className={styles.container}>
-          <VacanyBrief />
+          <VacanyBrief alt />
           <div className={styles.description}>
             <div className={styles.description_title}>Обязанности:</div>
             <div className={styles.description_text}>

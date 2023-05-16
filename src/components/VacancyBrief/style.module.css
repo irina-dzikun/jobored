@@ -3,7 +3,6 @@
   background: #ffffff;
   border: 1px solid #eaebed;
   border-radius: 12px;
-  margin-top: 16px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -25,14 +24,27 @@
   color: #5e96fc;
 }
 
+.content_title_alt {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 34px;
+  color: #232134;
+}
+
 .content_info {
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
   color: #232134;
   margin: 12px 0;
+}
+
+.content_info_alt {
+  font-weight: 400;
+  font-size: 20px;
+  color: #232134;
+  line-height: 20px;
+  margin: 16px 0;
 }
 
 .content_location {
@@ -47,10 +59,15 @@
 }
 
 .location_text {
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
+  color: #232134;
+}
+
+.location_text_alt {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
   color: #232134;
 }

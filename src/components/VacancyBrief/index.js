@@ -4,13 +4,16 @@ import styles from "./style.module.css";
 
 import iconLocation from "../../images/location-icon.svg";
 import iconSave from "../../images/save-icon.svg";
+import iconfavoriteSave from "../../images/favorite-save-icon.svg";
 
-function VacanyBrief() {
+function VacanyBrief({ active, alt }) {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <div className={styles.content_title}>Менеджер-дизайнер</div>
-        <div className={styles.content_info}>
+        <div className={alt ? styles.content_title_alt : styles.content_title}>
+          Менеджер-дизайнер
+        </div>
+        <div className={alt ? styles.content_info_alt : styles.content_info}>
           <b>з/п от 70000 rub</b> • Полный рабочий день
         </div>
         <div className={styles.content_location}>
@@ -19,11 +22,15 @@ function VacanyBrief() {
             alt="icon-location"
             className={styles.img_location}
           ></img>
-          <div className={styles.location_text}>Новый Уренгой</div>
+          <div
+            className={alt ? styles.location_text_alt : styles.location_text}
+          >
+            Новый Уренгой
+          </div>
         </div>
       </div>
       <div>
-        <img src={iconSave} alt="icon-save"></img>
+        <img src={active ? iconfavoriteSave : iconSave} alt="icon-save"></img>
       </div>
     </div>
   );
