@@ -8,6 +8,7 @@
   justify-content: space-between;
   padding: 24px;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 .content {

@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import styles from "./style.module.css";
 
 import iconTitle from "../../images/title-icon.svg";
 
-function Header() {
+function Header({ main, favorites }) {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
@@ -13,8 +14,18 @@ function Header() {
       </div>
 
       <div className={styles.pages}>
-        <div className={`${styles.pages_text} active`}>Поиск Вакансий</div>
-        <div className={styles.pages_text}>Избранное</div>
+        <Link
+          to="/"
+          className={main ? styles.pages_text_active : styles.pages_text}
+        >
+          Поиск Вакансий
+        </Link>
+        <Link
+          to="/favorites"
+          className={favorites ? styles.pages_text_active : styles.pages_text}
+        >
+          Избранное
+        </Link>
       </div>
     </div>
   );

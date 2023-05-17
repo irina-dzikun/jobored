@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import styles from "./style.module.css";
 
@@ -8,7 +9,7 @@ import iconfavoriteSave from "../../images/favorite-save-icon.svg";
 
 function VacanyBrief({ active, alt }) {
   return (
-    <div className={styles.container}>
+    <Link to="/vacancy" className={styles.container}>
       <div className={styles.content}>
         <div className={alt ? styles.content_title_alt : styles.content_title}>
           Менеджер-дизайнер
@@ -32,7 +33,7 @@ function VacanyBrief({ active, alt }) {
       <div>
         <img src={active ? iconfavoriteSave : iconSave} alt="icon-save"></img>
       </div>
-    </div>
+    </Link>
   );
 }
 

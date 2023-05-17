@@ -10,7 +10,7 @@ class FavoritesPage extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header favorites />
         <div className={styles.container}>
           <VacanyBrief active />
           <VacanyBrief active />

@@ -12,7 +12,7 @@ class MainPage extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header main />
         <div className={styles.container}>
           <Filters />
           <div className={styles.search_vacancies}>
