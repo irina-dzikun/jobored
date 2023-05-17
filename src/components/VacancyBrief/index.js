@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./style.module.css";
@@ -7,7 +7,15 @@ import iconLocation from "../../images/location-icon.svg";
 import iconSave from "../../images/save-icon.svg";
 import iconfavoriteSave from "../../images/favorite-save-icon.svg";
 
-function VacanyBrief({ active, alt }) {
+function VacanyBrief({ alt }) {
+  const [favorite, setFavorite] = useState(false);
+
+  function toggleFavorite(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    setFavorite((favorite) => !favorite);
+  }
+
   return (
     <Link to="/vacancy" className={styles.container}>
       <div className={styles.content}>
@@ -32,11 +40,8 @@ function VacanyBrief({ active, alt }) {
       </div>
       <div>
         <img
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-          }}
-          src={active ? iconfavoriteSave : iconSave}
+          onClick={toggleFavorite}
+          src={favorite ? iconfavoriteSave : iconSave}
           alt="icon-save"
         />
       </div>
