@@ -22,7 +22,7 @@ function VacanyBrief({ active, alt }) {
             src={iconLocation}
             alt="icon-location"
             className={styles.img_location}
-          ></img>
+          />
           <div
             className={alt ? styles.location_text_alt : styles.location_text}
           >
@@ -31,7 +31,14 @@ function VacanyBrief({ active, alt }) {
         </div>
       </div>
       <div>
-        <img src={active ? iconfavoriteSave : iconSave} alt="icon-save"></img>
+        <img
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+          }}
+          src={active ? iconfavoriteSave : iconSave}
+          alt="icon-save"
+        />
       </div>
     </Link>
   );

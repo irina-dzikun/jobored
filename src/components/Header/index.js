@@ -8,10 +8,10 @@ import iconTitle from "../../images/title-icon.svg";
 function Header({ main, favorites }) {
   return (
     <div className={styles.container}>
-      <div className={styles.title}>
-        <img src={iconTitle} alt="icon-title"></img>
+      <Link to="/" className={styles.title}>
+        <img src={iconTitle} alt="icon-title" />
         <div className={styles.title_text}>Jobored</div>
-      </div>
+      </Link>
 
       <div className={styles.pages}>
         <Link
