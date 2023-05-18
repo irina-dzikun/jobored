@@ -21,3 +21,21 @@ body {
   flex: 3;
   gap: 16px;
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.loading_img {
+  width: 130px;
+  height: auto;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -7,7 +7,14 @@ import iconLocation from "../../images/location-icon.svg";
 import iconSave from "../../images/save-icon.svg";
 import iconfavoriteSave from "../../images/favorite-save-icon.svg";
 
-function VacanyBrief({ alt }) {
+function VacanyBrief({
+  alt,
+  profession,
+  town,
+  typeOfWork,
+  paymentTo,
+  currency,
+}) {
   const [favorite, setFavorite] = useState(false);
 
   function toggleFavorite(e) {
@@ -20,10 +27,13 @@ function VacanyBrief({ alt }) {
     <Link to="/vacancy" className={styles.container}>
       <div className={styles.content}>
         <div className={alt ? styles.content_title_alt : styles.content_title}>
-          Менеджер-дизайнер
+          {profession}
         </div>
         <div className={alt ? styles.content_info_alt : styles.content_info}>
-          <b>з/п от 70000 rub</b> • Полный рабочий день
+          <b>
+            з/п от {paymentTo} {currency}
+          </b>{" "}
+          • {typeOfWork}
         </div>
         <div className={styles.content_location}>
           <img
@@ -34,7 +44,7 @@ function VacanyBrief({ alt }) {
           <div
             className={alt ? styles.location_text_alt : styles.location_text}
           >
-            Новый Уренгой
+            {town}
           </div>
         </div>
       </div>
