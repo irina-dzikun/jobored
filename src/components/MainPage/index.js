@@ -1,4 +1,6 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
+import useAuth from "../../hooks/useAuth";
+import useSearch from "../../hooks/useSearch";
 
 import styles from "./style.module.css";
 
@@ -28,24 +30,3 @@ const MainPage = () => {
 };
 
 export default MainPage;
-
-// class MainPage extends Component {
-//   render() {
-//     return (
-//       <div>
-//         <Header main />
-//         <div className={styles.container}>
-//           <Filters />
-//           <div className={styles.search_vacancies}>
-//             <InputSearch />
-//             <VacanyBrief />
-//             <VacanyBrief />
-//             <VacanyBrief />
-//             <VacanyBrief />
-//             <PagesButton />
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
