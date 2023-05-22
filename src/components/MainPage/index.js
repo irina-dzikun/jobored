@@ -11,7 +11,8 @@ import VacanyBrief from "../VacancyBrief";
 import PagesButton from "../PagesButton";
 
 const MainPage = () => {
-  const searchVacancies = useSearch();
+  const [query, setQuery] = useState("");
+  const searchVacancies = useSearch(query);
 
   return (
     <div>
@@ -19,7 +20,7 @@ const MainPage = () => {
       <div className={styles.container}>
         <Filters />
         <div className={styles.search_vacancies}>
-          <InputSearch />
+          <InputSearch onSubmit={(value) => setQuery(value)} />
           {searchVacancies.isLoading ? (
             <div className={styles.loading}>
               <img
@@ -28,10 +29,11 @@ const MainPage = () => {
                 className={styles.loading_img}
               />
             </div>
-          ) : (
+          ) : searchVacancies.data.objects.length !== 0 ? (
             <>
               {searchVacancies.data.objects.map((item) => (
                 <VacanyBrief
+                  key={item.id}
                   profession={item.profession}
                   town={item.town.title}
                   typeOfWork={item.type_of_work.title}
@@ -41,6 +43,8 @@ const MainPage = () => {
               ))}
               <PagesButton />
             </>
+          ) : (
+            <div className={styles.nothing_text}>Ничего не найдено</div>
           )}
         </div>
       </div>

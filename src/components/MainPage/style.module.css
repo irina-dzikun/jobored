@@ -39,3 +39,11 @@ body {
     transform: rotate(360deg);
   }
 }
+.nothing_text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(94, 150, 252, 1);
+  text-align: center;
+  padding-top: 60px;
+}
