@@ -11,16 +11,23 @@ import VacanyBrief from "../VacancyBrief";
 import PagesButton from "../PagesButton";
 
 const MainPage = () => {
-  const [query, setQuery] = useState("");
-  const searchVacancies = useSearch(query);
+  const [keyword, setKeyword] = useState("");
+  const [paymentFrom, setPaymentFrom] = useState("");
+  const [paymentTo, setPaymentTo] = useState("");
+  const searchVacancies = useSearch(keyword, paymentFrom, paymentTo);
 
   return (
     <div>
       <Header main />
       <div className={styles.container}>
-        <Filters />
+        <Filters
+          onSubmit={(paymentFrom, paymentTo) => {
+            setPaymentFrom(paymentFrom);
+            setPaymentTo(paymentTo);
+          }}
+        />
         <div className={styles.search_vacancies}>
-          <InputSearch onSubmit={(value) => setQuery(value)} />
+          <InputSearch onSubmit={(value) => setKeyword(value)} />
           {searchVacancies.isLoading ? (
             <div className={styles.loading}>
               <img

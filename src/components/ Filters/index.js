@@ -1,10 +1,13 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 
 import styles from "./style.module.css";
 
-function Filters() {
+function Filters({ onSubmit }) {
+  const [paymentFrom, setPaymentFrom] = useState("");
+  const [paymentTo, setPaymentTo] = useState("");
+
   return (
-    <form className={styles.container}>
+    <div className={styles.container}>
       <div className={styles.title}>
         <div className={styles.title_text}>Фильтры</div>
         <div className={styles.title_reset}>Сбросить все x</div>
@@ -20,19 +23,28 @@ function Filters() {
       <input
         type="number"
         step="1"
-        min="1"
+        min="0"
         placeholder="От"
         className={styles.salary_input_from}
+        onChange={(e) => setPaymentFrom(e.target.value)}
+        value={paymentFrom}
       />
       <input
         type="number"
         step="1"
-        min="1"
+        min="0"
         placeholder="До"
         className={styles.salary_input_to}
+        onChange={(e) => setPaymentTo(e.target.value)}
+        value={paymentTo}
       />
-      <button className={styles.button}>Применить</button>
-    </form>
+      <button
+        className={styles.button}
+        onClick={() => onSubmit(paymentFrom, paymentTo)}
+      >
+        Применить
+      </button>
+    </div>
   );
 }
 

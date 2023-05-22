@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
-const useSearch = (query) => {
+const useSearch = (keyword, paymentFrom, paymentTo) => {
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch(
-      `https://startup-summer-2023-proxy.onrender.com/2.0/vacancies/?published=1&keyword=${query}`,
+      `https://startup-summer-2023-proxy.onrender.com/2.0/vacancies/?published=1&keyword=${keyword}&payment_from=${paymentFrom}&payment_to=${paymentTo}`,
       {
         headers: {
           "x-secret-key": "GEU4nvd3rej*jeh.eqp",
@@ -27,7 +27,7 @@ const useSearch = (query) => {
           setError(error);
         }
       );
-  }, [query]);
+  }, [keyword, paymentFrom, paymentTo]);
 
   return { error, data, isLoading };
 };
