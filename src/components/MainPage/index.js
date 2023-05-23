@@ -1,5 +1,5 @@
-import React, { Component, useState, useEffect } from "react";
-import useAuth from "../../hooks/useAuth";
+import React, { useState } from "react";
+
 import useSearch from "../../hooks/useSearch";
 
 import styles from "./style.module.css";
@@ -14,16 +14,23 @@ const MainPage = () => {
   const [keyword, setKeyword] = useState("");
   const [paymentFrom, setPaymentFrom] = useState("");
   const [paymentTo, setPaymentTo] = useState("");
-  const searchVacancies = useSearch(keyword, paymentFrom, paymentTo);
+  const [catalogues, setCatalogues] = useState("");
+  const searchVacancies = useSearch(
+    keyword,
+    paymentFrom,
+    paymentTo,
+    catalogues
+  );
 
   return (
     <div>
       <Header main />
       <div className={styles.container}>
         <Filters
-          onSubmit={(paymentFrom, paymentTo) => {
+          onSubmit={(paymentFrom, paymentTo, catalogues) => {
             setPaymentFrom(paymentFrom);
             setPaymentTo(paymentTo);
+            setCatalogues(catalogues);
           }}
         />
         <div className={styles.search_vacancies}>

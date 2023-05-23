@@ -32,9 +32,6 @@
   cursor: pointer;
 }
 
-.department {
-}
-
 .department_text {
   font-family: "Inter";
   font-style: normal;
@@ -61,6 +58,26 @@
   background-color: white;
 }
 
+.department_input option {
+  color: black;
+}
+
+.department_input_active {
+  width: 100%;
+  height: 42px;
+  box-sizing: border-box;
+  border: 1px solid #d5d6dc;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: black;
+  padding-left: 12px;
+  cursor: pointer;
+  outline: none;
+  background-color: white;
+}
+
 .salary_text {
   margin-top: 20px;
   margin-bottom: 8px;
@@ -70,11 +87,15 @@
   color: #232134;
 }
 
+.salary_input_from::placeholder {
+  color: #acadb9;
+}
+
 .salary_input_from {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  color: #acadb9;
+  color: black;
   width: 100%;
   height: 42px;
   box-sizing: border-box;
@@ -86,11 +107,15 @@
   outline: none;
 }
 
+.salary_input_to::placeholder {
+  color: #acadb9;
+}
+
 .salary_input_to {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  color: #acadb9;
+  color: black;
   width: 100%;
   height: 42px;
   box-sizing: border-box;

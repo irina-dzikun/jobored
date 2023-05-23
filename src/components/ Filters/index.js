@@ -1,10 +1,15 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 
 import styles from "./style.module.css";
+
+import useCatalogues from "../../hooks/useCatalogues";
 
 function Filters({ onSubmit }) {
   const [paymentFrom, setPaymentFrom] = useState("");
   const [paymentTo, setPaymentTo] = useState("");
+  const [catalogues, setCatalogues] = useState("");
+
+  const searchCatalogues = useCatalogues();
 
   return (
     <div className={styles.container}>
@@ -13,11 +18,27 @@ function Filters({ onSubmit }) {
         <div className={styles.title_reset}>Сбросить все x</div>
       </div>
       <div className={styles.department_text}>Отрасль</div>
-      <select className={styles.department_input}>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
+      <select
+        className={
+          catalogues ? styles.department_input_active : styles.department_input
+        }
+        onChange={(e) => setCatalogues(e.target.value)}
+        value={catalogues}
+      >
+        {searchCatalogues.isLoading ? (
+          ""
+        ) : (
+          <>
+            <option value="" disabled hidden>
+              Выберете отрасль
+            </option>
+            {searchCatalogues.data.map((item) => (
+              <option key={item.key} value={item.key}>
+                {item.title}
+              </option>
+            ))}
+          </>
+        )}
       </select>
       <div className={styles.salary_text}>Оклад</div>
       <input
@@ -40,7 +61,7 @@ function Filters({ onSubmit }) {
       />
       <button
         className={styles.button}
-        onClick={() => onSubmit(paymentFrom, paymentTo)}
+        onClick={() => onSubmit(paymentFrom, paymentTo, catalogues)}
       >
         Применить
       </button>
