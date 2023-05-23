@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 
 import styles from "./style.module.css";
 
 import VectorLeft from "../../images/vector-left.svg";
 import VectorRight from "../../images/vector-right.svg";
 
-function PagesButton() {
+const PagesButton = () => {
   return (
     <div className={styles.container}>
       <button className={styles.button}>
@@ -19,6 +19,6 @@ function PagesButton() {
       </button>
     </div>
   );
-}
+};
 
 export default PagesButton;

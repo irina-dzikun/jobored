@@ -1,10 +1,10 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 
 import styles from "./style.module.css";
 
 import iconSearch from "../../images/search-icon.svg";
 
-function InputSearch({ onSubmit }) {
+const InputSearch = ({ onSubmit }) => {
   const [value, setValue] = useState("");
 
   return (
@@ -22,6 +22,6 @@ function InputSearch({ onSubmit }) {
       </button>
     </div>
   );
-}
+};
 
 export default InputSearch;

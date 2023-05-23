@@ -4,7 +4,7 @@ import styles from "./style.module.css";
 
 import useCatalogues from "../../hooks/useCatalogues";
 
-function Filters({ onSubmit }) {
+const Filters = ({ onSubmit }) => {
   const [paymentFrom, setPaymentFrom] = useState("");
   const [paymentTo, setPaymentTo] = useState("");
   const [catalogues, setCatalogues] = useState("");
@@ -67,6 +67,6 @@ function Filters({ onSubmit }) {
       </button>
     </div>
   );
-}
+};
 
 export default Filters;

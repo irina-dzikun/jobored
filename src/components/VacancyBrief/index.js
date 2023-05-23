@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./style.module.css";
@@ -7,14 +7,14 @@ import iconLocation from "../../images/location-icon.svg";
 import iconSave from "../../images/save-icon.svg";
 import iconfavoriteSave from "../../images/favorite-save-icon.svg";
 
-function VacanyBrief({
+const VacanyBrief = ({
   alt,
   profession,
   town,
   typeOfWork,
   paymentTo,
   currency,
-}) {
+}) => {
   const [favorite, setFavorite] = useState(false);
 
   function toggleFavorite(e) {
@@ -57,6 +57,6 @@ function VacanyBrief({
       </div>
     </Link>
   );
-}
+};
 
 export default VacanyBrief;

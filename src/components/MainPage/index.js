@@ -5,7 +5,7 @@ import useSearch from "../../hooks/useSearch";
 import styles from "./style.module.css";
 
 import Header from "../Header";
-import Filters from "../ Filters";
+import Filters from "../Filters";
 import InputSearch from "../InputSearch";
 import VacanyBrief from "../VacancyBrief";
 import PagesButton from "../PagesButton";

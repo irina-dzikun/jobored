@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./style.module.css";
 
 import iconTitle from "../../images/title-icon.svg";
 
-function Header({ main, favorites }) {
+const Header = ({ main, favorites }) => {
   return (
     <div className={styles.container}>
       <Link to="/" className={styles.title}>
@@ -29,5 +29,5 @@ function Header({ main, favorites }) {
       </div>
     </div>
   );
-}
+};
 export default Header;
