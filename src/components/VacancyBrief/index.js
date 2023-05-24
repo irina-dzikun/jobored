@@ -8,6 +8,7 @@ import iconSave from "../../images/save-icon.svg";
 import iconfavoriteSave from "../../images/favorite-save-icon.svg";
 
 const VacanyBrief = ({
+  id,
   alt,
   profession,
   town,
@@ -24,7 +25,7 @@ const VacanyBrief = ({
   }
 
   return (
-    <Link to="/vacancy" className={styles.container}>
+    <Link to={`/vacancy/${id}`} className={styles.container}>
       <div className={styles.content}>
         <div className={alt ? styles.content_title_alt : styles.content_title}>
           {profession}

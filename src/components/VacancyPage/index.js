@@ -1,4 +1,6 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+import useVacanciesId from "../../hooks/useVacanciesId";
 
 import styles from "./style.module.css";
 
@@ -6,37 +8,41 @@ import Header from "../Header";
 import VacanyBrief from "../VacancyBrief";
 
 const VacancyPage = () => {
+  const { id } = useParams();
+  const searchVacanciesId = useVacanciesId(id);
+
   return (
     <div>
       <Header />
-      <div className={styles.container}>
-        <VacanyBrief alt />
-        <div className={styles.description}>
-          <div className={styles.description_title}>Обязанности:</div>
-          <div className={styles.description_text}>
-            Разработка дизайн-макетов для наружной, интерьерной рекламы,
-            полиграфии, сувенирной продукции. Подготовка и вёрстка макетов в
-            CorelDraw, Adobe photoshop. Создание дизайна логотипов и брендбуков
-            Управленческая функция: обучение, адаптация дизайнеров, их контроль,
-            оценка
-          </div>
-          <div className={styles.description_title}>Требования:</div>
-          <div className={styles.description_text}>
-            Собеседование – после успешного прохождения тестового задания
-            Рассматриваются кандидаты только с опытом работы Обязательно -
-            наличие портфолио Умение самостоятельно принимать решения, умение
-            объективно оценивать свою работу, работать в режиме многозадачности
-            и переключаться с одного задания к другому и планировать свой день.
-            Соблюдать сроки. Ответственный, исполнительный, целеустремленный,
-            большим плюсом будет опыт управления
-          </div>
-          <div className={styles.description_title}>Условия:</div>
-          <div className={styles.description_text}>
-            Оформление по контракту Полный социальный пакет Премирование по
-            результатам работы
+      {searchVacanciesId.isLoading ? (
+        <div className={styles.loading}>
+          <img
+            src="https://avatanplus.com/files/resources/original/5914929e02e2515bf85cb93c.png"
+            alt="loading"
+            className={styles.loading_img}
+          />
+        </div>
+      ) : (
+        <div className={styles.container}>
+          <VacanyBrief
+            alt
+            profession={searchVacanciesId.data.profession}
+            town={searchVacanciesId.data.town.title}
+            typeOfWork={searchVacanciesId.data.type_of_work.title}
+            paymentTo={searchVacanciesId.data.payment_to}
+            currency={searchVacanciesId.data.currency}
+          />
+          <div className={styles.description}>
+            <div>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: searchVacanciesId.data.vacancyRichText,
+                }}
+              ></div>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

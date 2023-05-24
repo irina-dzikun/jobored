@@ -46,3 +46,15 @@ body {
 .description_text:last-child {
   margin-bottom: 0;
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.loading_img {
+  width: 130px;
+  height: auto;
+  animation: spin 4s linear infinite;
+}

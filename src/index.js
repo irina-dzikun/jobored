@@ -14,7 +14,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/vacancy" element={<VacancyPage />} />
+        <Route path="/vacancy/:id" element={<VacancyPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
       </Routes>
     </BrowserRouter>

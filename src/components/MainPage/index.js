@@ -48,6 +48,7 @@ const MainPage = () => {
               {searchVacancies.data.objects.map((item) => (
                 <VacanyBrief
                   key={item.id}
+                  id={item.id}
                   profession={item.profession}
                   town={item.town.title}
                   typeOfWork={item.type_of_work.title}
