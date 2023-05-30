@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import {
+  favoriteHasId,
+  addFavoritesList,
+  removeFavoritesList,
+} from "../../utils/favorites";
 import styles from "./style.module.css";
 
 import iconLocation from "../../images/location-icon.svg";
@@ -16,12 +20,17 @@ const VacanyBrief = ({
   paymentTo,
   currency,
 }) => {
-  const [favorite, setFavorite] = useState(false);
+  const [favorite, setFavorite] = useState(favoriteHasId(id));
 
   function toggleFavorite(e) {
     e.preventDefault();
     e.stopPropagation();
     setFavorite((favorite) => !favorite);
+    if (!favorite) {
+      addFavoritesList(id);
+    } else {
+      removeFavoritesList(id);
+    }
   }
 
   return (

@@ -14,3 +14,30 @@ body {
   box-sizing: border-box;
   gap: 16px;
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.loading_img {
+  width: 130px;
+  height: auto;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.nothing_text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(94, 150, 252, 1);
+  text-align: center;
+  padding-top: 60px;
+}

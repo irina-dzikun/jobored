@@ -25,6 +25,7 @@ const VacancyPage = () => {
       ) : (
         <div className={styles.container}>
           <VacanyBrief
+            id={Number(id)}
             alt
             profession={searchVacanciesId.data.profession}
             town={searchVacanciesId.data.town.title}

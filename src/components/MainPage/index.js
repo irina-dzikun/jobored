@@ -15,6 +15,7 @@ const MainPage = () => {
   const [paymentFrom, setPaymentFrom] = useState("");
   const [paymentTo, setPaymentTo] = useState("");
   const [catalogues, setCatalogues] = useState("");
+
   const searchVacancies = useSearch(
     keyword,
     paymentFrom,
