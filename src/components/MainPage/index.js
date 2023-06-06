@@ -15,12 +15,14 @@ const MainPage = () => {
   const [paymentFrom, setPaymentFrom] = useState("");
   const [paymentTo, setPaymentTo] = useState("");
   const [catalogues, setCatalogues] = useState("");
+  const [page, setPage] = useState(1);
 
   const searchVacancies = useSearch(
     keyword,
     paymentFrom,
     paymentTo,
-    catalogues
+    catalogues,
+    page
   );
 
   return (
@@ -57,7 +59,13 @@ const MainPage = () => {
                   currency={item.currency}
                 />
               ))}
-              <PagesButton />
+
+              <PagesButton
+                onChange={(page) => {
+                  setPage(page);
+                }}
+                page={page}
+              />
             </>
           ) : (
             <div className={styles.nothing_text}>Ничего не найдено</div>
